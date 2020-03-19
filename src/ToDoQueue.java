@@ -1,0 +1,373 @@
+import java.util.PriorityQueue;
+import java.util.Queue;
+
+public class ToDoQueue {
+
+    public static FIFOQueue<Task> queue;
+    public static boolean running = true;
+    public static Task currentTask;
+
+
+    public static void main(String[] args){
+        queue = new FIFOQueue<Task>();
+
+        queue.push(new FixedTimeTask("Task 1", 20));
+        queue.push(new FixedTimeTask("Task 2", 20));
+        queue.push(new FixedTimeTask("Task 3", 20));
+        queue.push(new FixedTimeTask("Task 4", 20));
+        queue.push(new FixedTimeTask("Task 5", 20));
+        queue.push(new FixedTimeTask("Task 6", 20));
+        queue.push(new FixedTimeTask("Task 7", 20));
+        queue.push(new FixedTimeTask("Task 8", 20));
+        queue.push(new FixedTimeTask("Task 9", 20));
+        queue.push(new FixedTimeTask("Task 10", 20));
+        queue.push(new FixedTimeTask("Task 11", 20));
+        queue.push(new FixedTimeTask("Task 12", 20));
+        queue.push(new FixedTimeTask("Task 13", 20));
+        queue.push(new FixedTimeTask("Task 14", 20));
+        queue.push(new FixedTimeTask("Task 15", 20));
+        queue.push(new FixedTimeTask("Task 16", 20));
+        queue.push(new FixedTimeTask("Task 1", 20));
+        queue.push(new FixedTimeTask("Task 2", 20));
+        queue.push(new FixedTimeTask("Task 3", 20));
+        queue.push(new FixedTimeTask("Task 4", 20));
+        queue.push(new FixedTimeTask("Task 5", 20));
+        queue.push(new FixedTimeTask("Task 6", 20));
+        queue.push(new FixedTimeTask("Task 7", 20));
+        queue.push(new FixedTimeTask("Task 8", 20));
+        queue.push(new FixedTimeTask("Task 9", 20));
+        queue.push(new FixedTimeTask("Task 10", 20));
+        queue.push(new FixedTimeTask("Task 11", 20));
+        queue.push(new FixedTimeTask("Task 12", 20));
+        queue.push(new FixedTimeTask("Task 13", 20));
+        queue.push(new FixedTimeTask("Task 14", 20));
+        queue.push(new FixedTimeTask("Task 15", 20));
+        queue.push(new FixedTimeTask("Task 16", 20));
+        queue.push(new FixedTimeTask("Task 1", 20));
+        queue.push(new FixedTimeTask("Task 2", 20));
+        queue.push(new FixedTimeTask("Task 3", 20));
+        queue.push(new FixedTimeTask("Task 4", 20));
+        queue.push(new FixedTimeTask("Task 5", 20));
+        queue.push(new FixedTimeTask("Task 6", 20));
+        queue.push(new FixedTimeTask("Task 7", 20));
+        queue.push(new FixedTimeTask("Task 8", 20));
+        queue.push(new FixedTimeTask("Task 9", 20));
+        queue.push(new FixedTimeTask("Task 10", 20));
+        queue.push(new FixedTimeTask("Task 11", 20));
+        queue.push(new FixedTimeTask("Task 12", 20));
+        queue.push(new FixedTimeTask("Task 13", 20));
+        queue.push(new FixedTimeTask("Task 14", 20));
+        queue.push(new FixedTimeTask("Task 15", 20));
+        queue.push(new FixedTimeTask("Task 16", 20));
+        queue.push(new FixedTimeTask("Task 1", 20));
+        queue.push(new FixedTimeTask("Task 2", 20));
+        queue.push(new FixedTimeTask("Task 3", 20));
+        queue.push(new FixedTimeTask("Task 4", 20));
+        queue.push(new FixedTimeTask("Task 5", 20));
+        queue.push(new FixedTimeTask("Task 6", 20));
+        queue.push(new FixedTimeTask("Task 7", 20));
+        queue.push(new FixedTimeTask("Task 8", 20));
+        queue.push(new FixedTimeTask("Task 9", 20));
+        queue.push(new FixedTimeTask("Task 10", 20));
+        queue.push(new FixedTimeTask("Task 11", 20));
+        queue.push(new FixedTimeTask("Task 12", 20));
+        queue.push(new FixedTimeTask("Task 13", 20));
+        queue.push(new FixedTimeTask("Task 14", 20));
+        queue.push(new FixedTimeTask("Task 15", 20));
+        queue.push(new FixedTimeTask("Task 16", 20));
+        queue.push(new FixedTimeTask("Task 1", 20));
+        queue.push(new FixedTimeTask("Task 2", 20));
+        queue.push(new FixedTimeTask("Task 3", 20));
+        queue.push(new FixedTimeTask("Task 4", 20));
+        queue.push(new FixedTimeTask("Task 5", 20));
+        queue.push(new FixedTimeTask("Task 6", 20));
+        queue.push(new FixedTimeTask("Task 7", 20));
+        queue.push(new FixedTimeTask("Task 8", 20));
+        queue.push(new FixedTimeTask("Task 9", 20));
+        queue.push(new FixedTimeTask("Task 10", 20));
+        queue.push(new FixedTimeTask("Task 11", 20));
+        queue.push(new FixedTimeTask("Task 12", 20));
+        queue.push(new FixedTimeTask("Task 13", 20));
+        queue.push(new FixedTimeTask("Task 14", 20));
+        queue.push(new FixedTimeTask("Task 15", 20));
+        queue.push(new FixedTimeTask("Task 16", 20));
+        queue.push(new FixedTimeTask("Task 1", 20));
+        queue.push(new FixedTimeTask("Task 2", 20));
+        queue.push(new FixedTimeTask("Task 3", 20));
+        queue.push(new FixedTimeTask("Task 4", 20));
+        queue.push(new FixedTimeTask("Task 5", 20));
+        queue.push(new FixedTimeTask("Task 6", 20));
+        queue.push(new FixedTimeTask("Task 7", 20));
+        queue.push(new FixedTimeTask("Task 8", 20));
+        queue.push(new FixedTimeTask("Task 9", 20));
+        queue.push(new FixedTimeTask("Task 10", 20));
+        queue.push(new FixedTimeTask("Task 11", 20));
+        queue.push(new FixedTimeTask("Task 12", 20));
+        queue.push(new FixedTimeTask("Task 13", 20));
+        queue.push(new FixedTimeTask("Task 14", 20));
+        queue.push(new FixedTimeTask("Task 15", 20));
+        queue.push(new FixedTimeTask("Task 16", 20));
+        queue.push(new FixedTimeTask("Task 1", 20));
+        queue.push(new FixedTimeTask("Task 2", 20));
+        queue.push(new FixedTimeTask("Task 3", 20));
+        queue.push(new FixedTimeTask("Task 4", 20));
+        queue.push(new FixedTimeTask("Task 5", 20));
+        queue.push(new FixedTimeTask("Task 6", 20));
+        queue.push(new FixedTimeTask("Task 7", 20));
+        queue.push(new FixedTimeTask("Task 8", 20));
+        queue.push(new FixedTimeTask("Task 9", 20));
+        queue.push(new FixedTimeTask("Task 10", 20));
+        queue.push(new FixedTimeTask("Task 11", 20));
+        queue.push(new FixedTimeTask("Task 12", 20));
+        queue.push(new FixedTimeTask("Task 13", 20));
+        queue.push(new FixedTimeTask("Task 14", 20));
+        queue.push(new FixedTimeTask("Task 15", 20));
+        queue.push(new FixedTimeTask("Task 16", 20));
+        queue.push(new FixedTimeTask("Task 1", 20));
+        queue.push(new FixedTimeTask("Task 2", 20));
+        queue.push(new FixedTimeTask("Task 3", 20));
+        queue.push(new FixedTimeTask("Task 4", 20));
+        queue.push(new FixedTimeTask("Task 5", 20));
+        queue.push(new FixedTimeTask("Task 6", 20));
+        queue.push(new FixedTimeTask("Task 7", 20));
+        queue.push(new FixedTimeTask("Task 8", 20));
+        queue.push(new FixedTimeTask("Task 9", 20));
+        queue.push(new FixedTimeTask("Task 10", 20));
+        queue.push(new FixedTimeTask("Task 11", 20));
+        queue.push(new FixedTimeTask("Task 12", 20));
+        queue.push(new FixedTimeTask("Task 13", 20));
+        queue.push(new FixedTimeTask("Task 14", 20));
+        queue.push(new FixedTimeTask("Task 15", 20));
+        queue.push(new FixedTimeTask("Task 16", 20));
+        queue.push(new FixedTimeTask("Task 1", 20));
+        queue.push(new FixedTimeTask("Task 2", 20));
+        queue.push(new FixedTimeTask("Task 3", 20));
+        queue.push(new FixedTimeTask("Task 4", 20));
+        queue.push(new FixedTimeTask("Task 5", 20));
+        queue.push(new FixedTimeTask("Task 6", 20));
+        queue.push(new FixedTimeTask("Task 7", 20));
+        queue.push(new FixedTimeTask("Task 8", 20));
+        queue.push(new FixedTimeTask("Task 9", 20));
+        queue.push(new FixedTimeTask("Task 10", 20));
+        queue.push(new FixedTimeTask("Task 11", 20));
+        queue.push(new FixedTimeTask("Task 12", 20));
+        queue.push(new FixedTimeTask("Task 13", 20));
+        queue.push(new FixedTimeTask("Task 14", 20));
+        queue.push(new FixedTimeTask("Task 15", 20));
+        queue.push(new FixedTimeTask("Task 16", 20));
+        queue.push(new FixedTimeTask("Task 1", 20));
+        queue.push(new FixedTimeTask("Task 2", 20));
+        queue.push(new FixedTimeTask("Task 3", 20));
+        queue.push(new FixedTimeTask("Task 4", 20));
+        queue.push(new FixedTimeTask("Task 5", 20));
+        queue.push(new FixedTimeTask("Task 6", 20));
+        queue.push(new FixedTimeTask("Task 7", 20));
+        queue.push(new FixedTimeTask("Task 8", 20));
+        queue.push(new FixedTimeTask("Task 9", 20));
+        queue.push(new FixedTimeTask("Task 10", 20));
+        queue.push(new FixedTimeTask("Task 11", 20));
+        queue.push(new FixedTimeTask("Task 12", 20));
+        queue.push(new FixedTimeTask("Task 13", 20));
+        queue.push(new FixedTimeTask("Task 14", 20));
+        queue.push(new FixedTimeTask("Task 15", 20));
+        queue.push(new FixedTimeTask("Task 16", 20));
+        queue.push(new FixedTimeTask("Task 1", 20));
+        queue.push(new FixedTimeTask("Task 2", 20));
+        queue.push(new FixedTimeTask("Task 3", 20));
+        queue.push(new FixedTimeTask("Task 4", 20));
+        queue.push(new FixedTimeTask("Task 5", 20));
+        queue.push(new FixedTimeTask("Task 6", 20));
+        queue.push(new FixedTimeTask("Task 7", 20));
+        queue.push(new FixedTimeTask("Task 8", 20));
+        queue.push(new FixedTimeTask("Task 9", 20));
+        queue.push(new FixedTimeTask("Task 10", 20));
+        queue.push(new FixedTimeTask("Task 11", 20));
+        queue.push(new FixedTimeTask("Task 12", 20));
+        queue.push(new FixedTimeTask("Task 13", 20));
+        queue.push(new FixedTimeTask("Task 14", 20));
+        queue.push(new FixedTimeTask("Task 15", 20));
+        queue.push(new FixedTimeTask("Task 16", 20));
+        queue.push(new FixedTimeTask("Task 1", 20));
+        queue.push(new FixedTimeTask("Task 2", 20));
+        queue.push(new FixedTimeTask("Task 3", 20));
+        queue.push(new FixedTimeTask("Task 4", 20));
+        queue.push(new FixedTimeTask("Task 5", 20));
+        queue.push(new FixedTimeTask("Task 6", 20));
+        queue.push(new FixedTimeTask("Task 7", 20));
+        queue.push(new FixedTimeTask("Task 8", 20));
+        queue.push(new FixedTimeTask("Task 9", 20));
+        queue.push(new FixedTimeTask("Task 10", 20));
+        queue.push(new FixedTimeTask("Task 11", 20));
+        queue.push(new FixedTimeTask("Task 12", 20));
+        queue.push(new FixedTimeTask("Task 13", 20));
+        queue.push(new FixedTimeTask("Task 14", 20));
+        queue.push(new FixedTimeTask("Task 15", 20));
+        queue.push(new FixedTimeTask("Task 16", 20));
+        queue.push(new FixedTimeTask("Task 1", 20));
+        queue.push(new FixedTimeTask("Task 2", 20));
+        queue.push(new FixedTimeTask("Task 3", 20));
+        queue.push(new FixedTimeTask("Task 4", 20));
+        queue.push(new FixedTimeTask("Task 5", 20));
+        queue.push(new FixedTimeTask("Task 6", 20));
+        queue.push(new FixedTimeTask("Task 7", 20));
+        queue.push(new FixedTimeTask("Task 8", 20));
+        queue.push(new FixedTimeTask("Task 9", 20));
+        queue.push(new FixedTimeTask("Task 10", 20));
+        queue.push(new FixedTimeTask("Task 11", 20));
+        queue.push(new FixedTimeTask("Task 12", 20));
+        queue.push(new FixedTimeTask("Task 13", 20));
+        queue.push(new FixedTimeTask("Task 14", 20));
+        queue.push(new FixedTimeTask("Task 15", 20));
+        queue.push(new FixedTimeTask("Task 16", 20));
+        queue.push(new FixedTimeTask("Task 1", 20));
+        queue.push(new FixedTimeTask("Task 2", 20));
+        queue.push(new FixedTimeTask("Task 3", 20));
+        queue.push(new FixedTimeTask("Task 4", 20));
+        queue.push(new FixedTimeTask("Task 5", 20));
+        queue.push(new FixedTimeTask("Task 6", 20));
+        queue.push(new FixedTimeTask("Task 7", 20));
+        queue.push(new FixedTimeTask("Task 8", 20));
+        queue.push(new FixedTimeTask("Task 9", 20));
+        queue.push(new FixedTimeTask("Task 10", 20));
+        queue.push(new FixedTimeTask("Task 11", 20));
+        queue.push(new FixedTimeTask("Task 12", 20));
+        queue.push(new FixedTimeTask("Task 13", 20));
+        queue.push(new FixedTimeTask("Task 14", 20));
+        queue.push(new FixedTimeTask("Task 15", 20));
+        queue.push(new FixedTimeTask("Task 16", 20));
+        queue.push(new FixedTimeTask("Task 1", 20));
+        queue.push(new FixedTimeTask("Task 2", 20));
+        queue.push(new FixedTimeTask("Task 3", 20));
+        queue.push(new FixedTimeTask("Task 4", 20));
+        queue.push(new FixedTimeTask("Task 5", 20));
+        queue.push(new FixedTimeTask("Task 6", 20));
+        queue.push(new FixedTimeTask("Task 7", 20));
+        queue.push(new FixedTimeTask("Task 8", 20));
+        queue.push(new FixedTimeTask("Task 9", 20));
+        queue.push(new FixedTimeTask("Task 10", 20));
+        queue.push(new FixedTimeTask("Task 11", 20));
+        queue.push(new FixedTimeTask("Task 12", 20));
+        queue.push(new FixedTimeTask("Task 13", 20));
+        queue.push(new FixedTimeTask("Task 14", 20));
+        queue.push(new FixedTimeTask("Task 15", 20));
+        queue.push(new FixedTimeTask("Task 16", 20));
+        queue.push(new FixedTimeTask("Task 1", 20));
+        queue.push(new FixedTimeTask("Task 2", 20));
+        queue.push(new FixedTimeTask("Task 3", 20));
+        queue.push(new FixedTimeTask("Task 4", 20));
+        queue.push(new FixedTimeTask("Task 5", 20));
+        queue.push(new FixedTimeTask("Task 6", 20));
+        queue.push(new FixedTimeTask("Task 7", 20));
+        queue.push(new FixedTimeTask("Task 8", 20));
+        queue.push(new FixedTimeTask("Task 9", 20));
+        queue.push(new FixedTimeTask("Task 10", 20));
+        queue.push(new FixedTimeTask("Task 11", 20));
+        queue.push(new FixedTimeTask("Task 12", 20));
+        queue.push(new FixedTimeTask("Task 13", 20));
+        queue.push(new FixedTimeTask("Task 14", 20));
+        queue.push(new FixedTimeTask("Task 15", 20));
+        queue.push(new FixedTimeTask("Task 16", 20));
+        queue.push(new FixedTimeTask("Task 1", 20));
+        queue.push(new FixedTimeTask("Task 2", 20));
+        queue.push(new FixedTimeTask("Task 3", 20));
+        queue.push(new FixedTimeTask("Task 4", 20));
+        queue.push(new FixedTimeTask("Task 5", 20));
+        queue.push(new FixedTimeTask("Task 6", 20));
+        queue.push(new FixedTimeTask("Task 7", 20));
+        queue.push(new FixedTimeTask("Task 8", 20));
+        queue.push(new FixedTimeTask("Task 9", 20));
+        queue.push(new FixedTimeTask("Task 10", 20));
+        queue.push(new FixedTimeTask("Task 11", 20));
+        queue.push(new FixedTimeTask("Task 12", 20));
+        queue.push(new FixedTimeTask("Task 13", 20));
+        queue.push(new FixedTimeTask("Task 14", 20));
+        queue.push(new FixedTimeTask("Task 15", 20));
+        queue.push(new FixedTimeTask("Task 16", 20));
+        queue.push(new FixedTimeTask("Task 1", 20));
+        queue.push(new FixedTimeTask("Task 2", 20));
+        queue.push(new FixedTimeTask("Task 3", 20));
+        queue.push(new FixedTimeTask("Task 4", 20));
+        queue.push(new FixedTimeTask("Task 5", 20));
+        queue.push(new FixedTimeTask("Task 6", 20));
+        queue.push(new FixedTimeTask("Task 7", 20));
+        queue.push(new FixedTimeTask("Task 8", 20));
+        queue.push(new FixedTimeTask("Task 9", 20));
+        queue.push(new FixedTimeTask("Task 10", 20));
+        queue.push(new FixedTimeTask("Task 11", 20));
+        queue.push(new FixedTimeTask("Task 12", 20));
+        queue.push(new FixedTimeTask("Task 13", 20));
+        queue.push(new FixedTimeTask("Task 14", 20));
+        queue.push(new FixedTimeTask("Task 15", 20));
+        queue.push(new FixedTimeTask("Task 16", 20));
+        queue.push(new FixedTimeTask("Task 1", 20));
+        queue.push(new FixedTimeTask("Task 2", 20));
+        queue.push(new FixedTimeTask("Task 3", 20));
+        queue.push(new FixedTimeTask("Task 4", 20));
+        queue.push(new FixedTimeTask("Task 5", 20));
+        queue.push(new FixedTimeTask("Task 6", 20));
+        queue.push(new FixedTimeTask("Task 7", 20));
+        queue.push(new FixedTimeTask("Task 8", 20));
+        queue.push(new FixedTimeTask("Task 9", 20));
+        queue.push(new FixedTimeTask("Task 10", 20));
+        queue.push(new FixedTimeTask("Task 11", 20));
+        queue.push(new FixedTimeTask("Task 12", 20));
+        queue.push(new FixedTimeTask("Task 13", 20));
+        queue.push(new FixedTimeTask("Task 14", 20));
+        queue.push(new FixedTimeTask("Task 15", 20));
+        queue.push(new FixedTimeTask("Task 16", 20));
+        queue.push(new FixedTimeTask("Task 1", 20));
+        queue.push(new FixedTimeTask("Task 2", 20));
+        queue.push(new FixedTimeTask("Task 3", 20));
+        queue.push(new FixedTimeTask("Task 4", 20));
+        queue.push(new FixedTimeTask("Task 5", 20));
+        queue.push(new FixedTimeTask("Task 6", 20));
+        queue.push(new FixedTimeTask("Task 7", 20));
+        queue.push(new FixedTimeTask("Task 8", 20));
+        queue.push(new FixedTimeTask("Task 9", 20));
+        queue.push(new FixedTimeTask("Task 10", 20));
+        queue.push(new FixedTimeTask("Task 11", 20));
+        queue.push(new FixedTimeTask("Task 12", 20));
+        queue.push(new FixedTimeTask("Task 13", 20));
+        queue.push(new FixedTimeTask("Task 14", 20));
+        queue.push(new FixedTimeTask("Task 15", 20));
+        queue.push(new FixedTimeTask("Task 16", 20));
+
+
+
+        new Thread(new Display()).start();
+
+
+
+        while(!(queue.sizeOfQueue() == 0)){
+            currentTask = queue.pop();
+            currentTask.startTask();
+            //System.out.print(currentTask.getName() + " started at: ");
+            //System.out.println(System.currentTimeMillis());
+            while (!currentTask.isCompleted()) {//wait for task to finish
+                try {
+                    Thread.sleep(1);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                //System.out.println("in wait loop");
+
+            }
+
+
+
+
+
+
+            //System.out.print("Task finished at: ");
+           // System.out.println(System.currentTimeMillis());
+
+
+
+
+
+
+
+        }
+        running = false;
+    }
+}
