@@ -2,6 +2,7 @@ import java.io.IOException;
 
 public class Display implements Runnable{
 
+private static String OS = System.getProperty("os.name").toLowerCase();
     public Display(){}
 
     public void run(){
@@ -10,8 +11,8 @@ public class Display implements Runnable{
             String stringToPrint = "Current Task: " + ToDoQueue.currentTask.getName() + "\nRemaining Time: " + ToDoQueue.currentTask.timeRemaining();
             if(!stringToPrint.equals(currentDisp)){
                 currentDisp = stringToPrint;
-                System.out.print("\033[H\033[2J");
-                System.out.flush();
+                try{clearScreen();}catch(Exception e){}
+                
                 System.out.println(currentDisp);
 
             }
@@ -22,4 +23,26 @@ public class Display implements Runnable{
             }
         }
     }
+
+    private void clearScreen() throws Exception{
+        
+        if (isWindows()) {
+			new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+		} else if (isMac()) {
+			System.out.print("\033[H\033[2J");
+                System.out.flush();
+		}
+    }
+
+    private static boolean isWindows() {
+
+		return (OS.indexOf("win") >= 0);
+
+	}
+
+	private static boolean isMac() {
+
+		return (OS.indexOf("mac") >= 0);
+
+	}
 }
